@@ -37,13 +37,35 @@ namespace Лаба1
         }
         public string Answer()
         {
-            return Form1.answer;
+            try
+            {
+                if (Form1.answer != "")
+                {
+                    return Form1.answer;
+                }
+                else throw new Exception("There is no saved results");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return "";
         }
         public string Remainder(string str)
         {
-            string[] operands = str.Split('%');
-            Form1.answer = (Double.Parse(operands[0]) % Double.Parse(operands[1])).ToString();
-            return Form1.answer;
+            try
+            {
+                string[] operands = str.Split('%');
+                if (operands.Length == 2) {
+                    Form1.answer = (Double.Parse(operands[0]) % Double.Parse(operands[1])).ToString();
+                    return Form1.answer; 
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return "";
         }
         public string WholePart(string str)
         {
