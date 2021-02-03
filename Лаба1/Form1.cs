@@ -15,6 +15,7 @@ namespace Лаба1
     public partial class Form1 : Form
     {
         public static string answer = "";
+        public static List<string> listOfResults = new List<string>();
         public Form1()
         {
             InitializeComponent();
@@ -46,7 +47,7 @@ namespace Лаба1
             }
             else if (str == "Ans")
             {
-                textBox1.Text = calc.Answer();
+                textBox1.Text += calc.Answer();
             }
             else if (str == "=")
             {

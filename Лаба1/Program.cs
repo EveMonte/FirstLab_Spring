@@ -50,6 +50,7 @@ namespace Лаба1
                 MessageBox.Show(ex.Message);
             }
             return "";
+
         }
         public string Remainder(string str)
         {
@@ -58,6 +59,8 @@ namespace Лаба1
                 string[] operands = str.Split('%');
                 if (operands.Length == 2) {
                     Form1.answer = (Double.Parse(operands[0]) % Double.Parse(operands[1])).ToString();
+                    //Form1.listOfResults.Add((Double.Parse(operands[0]) % Double.Parse(operands[1])).ToString());
+
                     return Form1.answer; 
                 }
             }
@@ -85,6 +88,7 @@ namespace Лаба1
                 if (i == 2)
                 {
                     Form1.answer = Math.Truncate(Double.Parse(op[0]) / Double.Parse(op[1])).ToString();
+                    //Form1.listOfResults.Add(Form1.answer);
                     return Form1.answer;
                 }
                 else
@@ -102,6 +106,7 @@ namespace Лаба1
         {
             string value = new DataTable().Compute(str, null).ToString();
             Form1.answer = value;
+            //Form1.listOfResults.Add(value);
             return Form1.answer;
 
         }
